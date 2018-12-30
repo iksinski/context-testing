@@ -9,10 +9,9 @@ const context = {
 describe("ModalButton", () => {
   it("should call open modal function when clicked", () => {
     const { getByText } = render(<ModalButton context={context} />);
-    const spy = jest.spyOn(context, "openModal");
 
     getByText("Open modal").click();
 
-    expect(spy).toHaveBeenCalled();
+    expect(context.openModal).toHaveBeenCalled();
   });
 });
